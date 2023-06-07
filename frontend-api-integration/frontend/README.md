@@ -13,7 +13,7 @@
 ## Start the app 
 
 ✨To start the development server run:✨
-- 'npx nx serve' (or only 'nx serve' if you have globally installed nx)
+- 'npx nx serve' (or only 'nx serve' if you have nx globally installed)
 
 ##  Testing
 
@@ -24,9 +24,22 @@ Nx workspace offers E2E testing as a separate app. However, in this case i've tr
 - npx cypress run (This will run the tests (1 test) in the background without opening the browser instance)
 - npx cypress open (This will open the GUI for the cypress app so that you can visualize the way tests are ran - kind of like a debug)
 
-✨To run te unit tests run:✨
+✨To run the unit tests run:✨
 - nx test
 
 I've also added basic search filter on the /articles endpoint and universal filter on frontend(you can pass whatever key-value pair and it will be sent as a query param using react-query)
+
+
+## Docker
+
+I've also dockerized the app although I'm really a fan of containerization of frontends or at least in development.
+In simple words, the app is built inside a container and the build is served by nginx from port 80(container) to port 80 (outside machine)
+
+- 🫙You need to have docker installed🫙
+
+✨To run the app run :✨
+- docker build -t frontend
+- docker run -p 80:80 frontend
+- the app should run on localhost now
 
 🐴 - this is a horse
